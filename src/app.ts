@@ -19,7 +19,10 @@ app.use(cookieSession({
     signed: false
 }))
 
-app.use(cors());
+app.use(cors({
+    credentials: true,
+    origin: true
+}));
 
 app.use(currentUserRouter);
 app.use(signinRouter);
